@@ -1,4 +1,4 @@
-cabal-version:      2.4
+cabal-version:      3.0
 name:               echo
 version:            0.1.0.0
 license:            MIT
@@ -16,7 +16,7 @@ executable echo
 
     other-extensions: OverloadedStrings
 
-    build-depends:    base ^>=4.14.1.0
+    build-depends:    base >=4.13
                     , http-types
                     , scotty
                     , wai-extra

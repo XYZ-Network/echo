@@ -3,10 +3,7 @@ module Main where
 
 import           Network.Wai.Middleware.RequestLogger
                                                 ( logStdoutDev )
-import           Web.Scotty                     ( ActionM
-                                                , json
-                                                , jsonData
-                                                , matchAny
+import           Web.Scotty                     ( matchAny
                                                 , middleware
                                                 , scotty
                                                 , text
