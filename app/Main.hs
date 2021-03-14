@@ -1,8 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import           Network.HTTP.Types             ( status200 )
-
 import           Network.Wai.Middleware.RequestLogger
                                                 ( logStdoutDev )
 import           Web.Scotty                     ( matchAny
