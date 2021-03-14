@@ -1,11 +1,15 @@
 # echo
+
+<img align="right" width="100" height="100" title="XYZ Network logotype"
+src="https://avatars.githubusercontent.com/u/74674198?s=200&v=4">
+
 Just a HTTP requests logger
 
 ## Usage
 
 Take Docker image and run it. Server will start on `host:3000`
 ```shell
-docker run -p 3000:3000
+docker run -it -p 3000:3000 docker.pkg.github.com/vldc-hq/vldc-bot/bot:latest
 ```
 
 ## Development
