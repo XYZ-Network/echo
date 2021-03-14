@@ -1,7 +1,5 @@
 FROM haskell:8.8 as builder
 
-RUN apt-get update && apt-get install -y upx
-
 RUN cabal update
 
 RUN cabal install cabal-plan \
@@ -16,13 +14,13 @@ RUN --mount=type=cache,target=dist-newstyle cabal build --only-dependencies
 COPY . /build
 
 RUN --mount=type=cache,target=dist-newstyle cabal build exe:echo \
-  && mkdir -p /build/artifacts && cp $(cabal-plan list-bin echo) /build/artifacts/
-  
-RUN upx /build/artifacts/echo
+  && mkdir -p /build/artifacts \
+  && cp $(cabal-plan list-bin echo) /build/artifacts/
 
 
-FROM alpine
+FROM alpine:latest
 
+RUN apk add libc6-compat gmp
 COPY --from=builder /build/artifacts/echo /
 EXPOSE 3000:3000
 CMD ["/echo"]
